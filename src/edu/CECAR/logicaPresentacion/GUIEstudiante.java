@@ -23,6 +23,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import edu.CECAR.componentesReutilizables.CrearJFrame;
+import javax.swing.JScrollPane;
 
 /**
  ** Descripci�n
@@ -32,23 +33,35 @@ public class GUIEstudiante extends CrearJFrame {
 	
 	private JTextField TxtMin;
         private JTextField TxtMax;
+        private JTextField TxtTcorreo;
 	private JTextField tNombres;
 	private JLabel LblAc;
         private JLabel LblMin;
         private JLabel LblMax;
+        private JLabel LblPalabras;
+        JScrollPane obj= new JScrollPane();
 	public GUIEstudiante() {
 		
 		super("Relacion Entre Amigos",900,500);
-                //Label
-		LblAc= getJLabel("Alta Comunicacion:",10,0,120, 53);
+                //Panel alta comunicacion
+                //label
+		LblAc= getJLabel("Alta Comunicacion:",10,0,120,53);
                 LblMin=getJLabel("MIN:", 120,15, 60, 25);
                 LblMax=getJLabel("MAX:", 190,15, 60, 25);
+                LblPalabras=getJLabel("Palabras:",10,30,80,53);
+                getJLabel("Relacion Trabajo:",10,45,150,53);
+                getJLabel("Total Correos:",10,400,150,53);
+                TxtTcorreo=getJTextFieldNumero(95,415,35,25);
+                TxtTcorreo.setEditable(false);
+                getJTextArea(10,90,200,300);
+                getJTextArea(250,90,200,300);
+                getJLabel("Relacion Sentimental:",250,45,150,53);
+//jtextfield    
+                TxtMin = getJTextFieldNumero(150,15,35,25);
+                TxtMin = getJTextFieldNumero(220,15,35,25);
                 
                //texfield	
-		TxtMin = getJTextFieldNumero(150,15,35,25);
-		TxtMin.setName("4");
-                TxtMin = getJTextFieldNumero(220,15,35,25);
-		TxtMax.setName("4");
+		
 		
                 
                 
@@ -59,7 +72,7 @@ public class GUIEstudiante extends CrearJFrame {
 	
 	public static void main(String[] args) {
 		
-		new GUIEstudiante();
+            GUIEstudiante guiEstudiante = new GUIEstudiante();
 	}
 
 }

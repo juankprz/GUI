@@ -18,6 +18,7 @@ import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -33,7 +34,7 @@ import javax.swing.JTextField;
 public abstract class CrearJFrame {
 
 	private JFrame frame;
-
+        JScrollPane jsc = new JScrollPane();
 
 	/**
 	 * Metodo que define la GUI estandar 
@@ -57,7 +58,8 @@ public abstract class CrearJFrame {
 		frame.setSize(ancho, alto);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane();
+		frame.getContentPane().setBackground(Color.lightGray);
+               
 		frame.setLayout(null);		
 
 	}
@@ -93,13 +95,21 @@ public abstract class CrearJFrame {
 		
 	}
 	
+        public JTextArea getJTextArea(int posX, int posY,
+			int ancho, int alto){
+             JTextArea textArea = new JTextArea(5, 20);
+             textArea.setBounds(posX,  posY, ancho,  alto);
+             getFrame().add(textArea);
+             return textArea;
+        }
 	public JTextField getJTextFieldTexto(int posX, int posY,
 			int ancho, int alto) { 
 		
 		JTextField tResultado = new JTextField();
 		tResultado.setBounds(posX,  posY, ancho,  alto);
 		getFrame().add(tResultado);
-		return tResultado;
+		
+                return tResultado;
 		
 	}
 
