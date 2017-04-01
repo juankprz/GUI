@@ -53,6 +53,8 @@ public class GUIEstudiante extends CrearJFrame {
                 getJLabel("Total Correos:",10,400,150,53);
                 TxtTcorreo=getJTextFieldNumero(95,415,35,25);
                 TxtTcorreo.setEditable(false);
+                 getJLabel("Resultasdos:",10,450,150,53);
+                 getJTextArea(10,500,700,300).setEditable(false);
                 getJTextArea(10,90,200,300);
                 getJTextArea(250,90,200,300);
                 getJLabel("Relacion Sentimental:",250,45,150,53);
